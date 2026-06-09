@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>não fiques onde já não estás</title>
+
+    <link rel="stylesheet" href="site.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- névoa / introdução -->
+    <div id="titulo-entrada">
+      <div id="nevoa"></div>
+
+      <p id="titulo-texto">não fiques onde já não estás</p>
+    </div>
+
+    <!-- cursor -->
+    <div id="cursor"></div>
+
+    <!-- composição horizontal -->
+    <main id="linha-estados">
+      <!-- CONTENÇÃO -->
+      <a class="estado vertical" href="contencao.html" data-estado="contencao">
+        <img src="img/narrativa/contencao/1.png" alt="Contenção" />
+        <span>contenção</span>
+      </a>
+
+      <!-- ATENÇÃO + LATÊNCIA -->
+      <div class="grupo-duplo">
+        <a class="estado horizontal" href="atencao.html" data-estado="atencao">
+          <img src="img/narrativa/atencao/1.png" alt="Atenção" />
+          <span>atenção</span>
+        </a>
+
+        <a
+          class="estado horizontal"
+          href="latencia.html"
+          data-estado="latencia"
+        >
+          <img src="img/narrativa/latencia/1.png" alt="Latência" />
+          <span>latência</span>
+        </a>
+      </div>
+
+      <!-- LIMIAR -->
+      <a class="estado vertical" href="limiar.html" data-estado="limiar">
+        <img src="img/narrativa/limiar/1.png" alt="Limiar" />
+        <span>limiar</span>
+      </a>
+
+      <!-- SUSPENSÃO + IMINÊNCIA -->
+      <div class="grupo-duplo">
+        <a
+          class="estado horizontal"
+          href="suspensao.html"
+          data-estado="suspensao"
+        >
+          <img src="img/narrativa/suspensao/1.png" alt="Suspensão" />
+          <span>suspensão</span>
+        </a>
+
+        <a
+          class="estado horizontal"
+          href="iminencia.html"
+          data-estado="iminencia"
+        >
+          <img src="img/narrativa/iminencia/1.png" alt="Iminência" />
+          <span>iminência</span>
+        </a>
+      </div>
+
+      <!-- POTÊNCIA -->
+      <a class="estado vertical" href="potencia.html" data-estado="potencia">
+        <img src="img/narrativa/potencia/9.png" alt="Potência" />
+        <span>potência</span>
+      </a>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <a id="link-manifesto" href="manifesto.html">Geórgia Fabris, 2026 </a>
+      <a id="link-documental" href="arquivo.html">
+        Belas Artes · Universidade do Porto
+      </a>
+    </footer>
+
+    <script>
+      /* ─────────────────────────────────────
+         CURSOR
+      ───────────────────────────────────── */
+
+      const cursor = document.getElementById("cursor");
+
+      window.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      /* ─────────────────────────────────────
+         INTRO / FADE
+      ───────────────────────────────────── */
+
+      const tituloEntrada = document.getElementById("titulo-entrada");
+      const linhaEstados = document.getElementById("linha-estados");
+
+      let introFinalizada = false;
+
+      function iniciarExperiencia() {
+        if (introFinalizada) return;
+
+        introFinalizada = true;
+
+        /* espera 2 segundos */
+        setTimeout(() => {
+          tituloEntrada.classList.add("fade");
+
+          linhaEstados.classList.add("visivel");
+
+          setTimeout(() => {
+            tituloEntrada.style.display = "none";
+          }, 4200);
+        }, 1500);
+      }
+
+      window.addEventListener("mousemove", iniciarExperiencia, { once: true });
+      window.addEventListener("touchstart", iniciarExperiencia, {
+        once: true,
+        passive: true,
+      });
+
+      setTimeout(iniciarExperiencia, 6500);
+
+      /* ─────────────────────────────────────
+         SEQUÊNCIAS PERFORMATIVAS
+      ───────────────────────────────────── */
+
+      const sequencias = {
+        contencao: [
+          "img/narrativa/contencao/1.png",
+          "img//narrativa/contencao/2.png",
+          "img/narrativa/contencao/3.png",
+          "img/narrativa/contencao/4.png",
+          "img/narrativa/contencao/5.png",
+          "img/narrativa/contencao/6.png",
+        ],
+
+        atencao: [
+          "img/narrativa/atencao/1.png",
+          "img/narrativa/atencao/2.png",
+          "img/narrativa/atencao/3.png",
+          "img/narrativa/atencao/4.png",
+          "img/narrativa/atencao/5.png",
+        ],
+
+        latencia: [
+          "img/narrativa/latencia/1.png",
+          "img/narrativa/latencia/2.png",
+          "img/narrativa/latencia/3.png",
+          "img/narrativa/latencia/4.png",
+          "img/narrativa/latencia/5.png",
+        ],
+
+        limiar: [
+          "img/narrativa/limiar/1.png",
+          "img/narrativa/limiar/2.png",
+          "img/narrativa/limiar/3.png",
+          "img/narrativa/limiar/4.png",
+          "img/narrativa/limiar/5.png",
+          "img/narrativa/limiar/6.png",
+        ],
+
+        suspensao: [
+          "img/narrativa/suspensao/1.png",
+          "img/narrativa/suspensao/2.png",
+          "img/narrativa/suspensao/3.png",
+          "img/narrativa/suspensao/4.png",
+          "img/narrativa/suspensao/5.png",
+        ],
+
+        iminencia: [
+          "img/narrativa/iminencia/1.png",
+          "img/narrativa/iminencia/2.png",
+          "img/narrativa/iminencia/3.png",
+          "img/narrativa/iminencia/4.png",
+          "img/narrativa/iminencia/5.png",
+        ],
+
+        potencia: [
+          "img/narrativa/potencia/9.png",
+          "img/narrativa/potencia/8.png",
+          "img/narrativa/potencia/7.png",
+          "img/narrativa/potencia/6.png",
+          "img/narrativa/potencia/5.png",
+          "img/narrativa/potencia/4.png",
+          "img/narrativa/potencia/3.png",
+          "img/narrativa/potencia/2.png",
+          "img/narrativa/potencia/1.png",
+        ],
+      };
+
+      const estados = document.querySelectorAll(".estado");
+
+      estados.forEach((estado) => {
+        const nomeEstado = estado.dataset.estado;
+        const imagens = sequencias[nomeEstado];
+        const img = estado.querySelector("img");
+
+        let frame = 0;
+        let intervalo = null;
+
+        estado.addEventListener("mouseenter", () => {
+          intervalo = setInterval(() => {
+            frame++;
+
+            if (frame >= imagens.length) {
+              frame = 0;
+            }
+
+            img.src = imagens[frame];
+          }, 300);
+        });
+
+        estado.addEventListener("mouseleave", () => {
+          clearInterval(intervalo);
+
+          frame = 0;
+
+          img.src = imagens[0];
+        });
+      });
+    </script>
+  </body>
+</html>

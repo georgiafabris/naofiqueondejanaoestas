@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────
+   BASE
+───────────────────────────────────── */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fafafa;
+  cursor: none;
+}
+
+body {
+  position: relative;
+  font-family: "DM Mono", monospace;
+}
+
+@media (hover: none) {
+  html,
+  body {
+    cursor: auto;
+  }
+}
+
+/* ─────────────────────────────────────
+   CURSOR
+───────────────────────────────────── */
+
+#cursor {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+@media (hover: none) {
+  #cursor {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────
+   INTRO
+───────────────────────────────────── */
+#titulo-entrada {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  z-index: 200;
+}
+
+#nevoa {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(250, 250, 250, 0.78);
+
+  transition: opacity 2s ease;
+}
+
+#titulo-entrada.fade #nevoa {
+  opacity: 0;
+  filter: blur(0px);
+}
+
+#titulo-texto {
+  position: relative;
+  z-index: 2;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(20px, 2vw, 42px);
+  font-style: italic;
+  font-weight: 400;
+
+  color: rgba(14, 11, 8, 0.72);
+
+  letter-spacing: 0.03em;
+
+  transition: opacity 1s ease;
+}
+
+#titulo-entrada.fade #titulo-texto {
+  opacity: 0;
+}
+
+/* ─────────────────────────────────────
+   LINHA HORIZONTAL
+───────────────────────────────────── */
+
+#linha-estados {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  transform: translateY(-3vh);
+
+  gap: 8vw;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-left: 12vw;
+  padding-right: 12vw;
+
+  opacity: 0.35;
+  filter: blur(14px);
+
+  transition:
+    opacity 2.8s ease,
+    filter 2.8s ease;
+
+  scrollbar-width: none;
+}
+
+#linha-estados::-webkit-scrollbar {
+  display: none;
+}
+
+#linha-estados.visivel {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* ─────────────────────────────────────
+   GRUPOS
+───────────────────────────────────── */
+
+.grupo-duplo {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+
+/* ─────────────────────────────────────
+   ESTADOS
+───────────────────────────────────── */
+
+.estado {
+  position: relative;
+
+  display: block;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease,
+    filter 0.8s ease;
+
+  opacity: 0.92;
+
+  flex-shrink: 0;
+}
+
+.estado:hover {
+  transform: scale(1.015);
+  opacity: 1;
+}
+
+/* verticais */
+.estado.vertical {
+  width: 26vw;
+  min-width: 320px;
+  max-width: 420px;
+}
+
+.estado.vertical img {
+  aspect-ratio: 0.7 / 1;
+}
+
+/* horizontais */
+.estado.horizontal {
+  width: 24vw;
+  min-width: 320px;
+  max-width: 300px;
+}
+
+.estado.horizontal img {
+  aspect-ratio: 1.45 / 1;
+}
+
+/* imagem */
+.estado img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: cover;
+
+  background: #f4f4f4;
+
+  mix-blend-mode: multiply;
+
+  box-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+/* legenda */
+.estado span {
+  position: absolute;
+
+  bottom: -28px;
+  left: 0;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: rgba(14, 11, 8, 0.36);
+}
+
+/* ─────────────────────────────────────
+   FOOTER
+───────────────────────────────────── */
+
+footer {
+  position: fixed;
+
+  bottom: 18px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 400;
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: rgba(14, 11, 8, 0.22);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+footer span,
+footer a {
+  pointer-events: all;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+footer span:hover,
+footer a:hover {
+  color: rgba(14, 11, 8, 0.55);
+}
+footer a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────
+   MOBILE
+───────────────────────────────────── */
+
+@media (max-width: 900px) {
+  #linha-estados {
+    gap: 18vw;
+    padding-left: 18vw;
+    padding-right: 18vw;
+  }
+
+  .grupo-duplo {
+    gap: 5vw;
+  }
+
+  .estado.vertical {
+    width: 62vw;
+    min-width: 62vw;
+  }
+
+  .estado.horizontal {
+    width: 72vw;
+    min-width: 72vw;
+  }
+
+  footer {
+    font-size: 9px;
+  }
+}

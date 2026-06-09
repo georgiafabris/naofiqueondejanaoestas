@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>manifesto | não fiques onde já não estás</title>
+
+    <link rel="stylesheet" href="manifesto.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- cursor -->
+    <div id="cursor"></div>
+
+    <!-- voltar -->
+    <button class="voltar" onclick="window.location.href = 'site.html'">
+      ← voltar
+    </button>
+
+    <!-- título -->
+
+    <header class="topo-manifesto">
+      <h1>não fiques onde já não estás</h1>
+    </header>
+
+    <main>
+      <section class="estrofe">
+        <p>
+          A pulsão não pede autorização.<br />
+          Uma energia que preenche o corpo inteiro.<br />
+          Alerta, mas contida.<br />
+          É tensão onde ainda não há gesto.
+        </p>
+      </section>
+
+      <section class="estrofe direita">
+        <p>
+          O corpo parece preso<br />
+          entre permanecer e mover-se.<br />
+          Há espera, mas não repouso.<br />
+          No entanto, permanecer já não é possível.
+        </p>
+      </section>
+
+      <section class="estrofe">
+        <p>
+          A energia à espera de forma.<br />
+          É instabilidade,<br />
+          mas também totalidade.<br />
+          Criatividade. Infinita possibilidade.
+        </p>
+      </section>
+
+      <section class="estrofe direita">
+        <p>
+          Algo que está prestes a acontecer,<br />
+          sem saber ao certo o quê.<br />
+          Há energia. Há iminência.
+        </p>
+      </section>
+
+      <section class="estrofe">
+        <p>
+          O limiar não é um lugar de passagem.<br />
+          É o lugar onde ainda podes ser tudo.<br />
+          E é neste "ainda"<br />
+          que reside a tua maior liberdade.
+        </p>
+      </section>
+
+      <section class="estrofe centro">
+        <p>
+          Lança-te.<br />
+          <br />
+          Não para chegar,<br />
+          mas para deixar de ser apenas intenção.
+        </p>
+      </section>
+
+      <section class="estrofe final">
+        <p>
+          Faz do gesto a tua única resposta.<br />
+          Sabendo que, ao moveres-te,<br />
+          trocas o infinito<br />
+          para finalmente viveres a vida.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a id="link-manifesto" href="manifesto.html">Geórgia Fabris, 2026 </a>
+      <a id="link-documental" href="arquivo.html">
+        Belas Artes · Universidade do Porto
+      </a>
+    </footer>
+
+    <script>
+      const cursor = document.getElementById("cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+    </script>
+  </body>
+</html>
+```

@@ -1,0 +1,309 @@
+/* ─────────────────────────────────────
+   RESET
+───────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────
+   BASE
+───────────────────────────────────── */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: white;
+}
+
+body {
+  position: relative;
+
+  font-family: "DM Mono", monospace;
+
+  cursor: none;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* ─────────────────────────────────────
+   CURSOR
+───────────────────────────────────── */
+
+#cursor {
+  position: fixed;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.22);
+
+  pointer-events: none;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 9999;
+}
+
+@media (hover: none) {
+  #cursor {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────
+   VOLTAR
+───────────────────────────────────── */
+
+.voltar {
+  position: fixed;
+
+  top: 24px;
+  left: 28px;
+
+  z-index: 300;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: rgba(14, 11, 8, 0.22);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
+}
+
+.voltar:hover {
+  opacity: 0.65;
+
+  transform: translateX(-2px);
+}
+
+/* ─────────────────────────────────────
+   TOPO
+───────────────────────────────────── */
+
+.topo {
+  position: fixed;
+
+  top: 22px;
+  right: 24px;
+
+  z-index: 300;
+
+  pointer-events: none;
+}
+
+.topo h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.02em;
+
+  text-align: right;
+
+  color: rgba(14, 11, 8, 0.72);
+}
+
+/* ─────────────────────────────────────
+   MAIN
+───────────────────────────────────── */
+
+main {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────
+   ENVELOPE
+───────────────────────────────────── */
+
+#envelope {
+  width: min(90vw);
+
+  max-height: 92vh;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  mix-blend-mode: multiply;
+
+  transition:
+    opacity 0.8s ease,
+    transform 1.4s ease;
+
+  margin-left: -120px;
+
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────
+   FOTO CENTRAL
+───────────────────────────────────── */
+
+#foto-central {
+  position: absolute;
+
+  max-height: 80vh;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  cursor: grab;
+
+  z-index: 20;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+  transition:
+    opacity 1.2s ease,
+    transform 0.4s ease;
+}
+
+/* visível */
+
+#foto-central.visivel {
+  opacity: 1;
+
+  pointer-events: all;
+}
+
+/* dragging */
+
+#foto-central.dragging {
+  cursor: grabbing;
+
+  transition: none;
+}
+
+/* hover */
+
+#foto-central:hover {
+  transform: translate(-50%, -50%) scale(1.01);
+}
+
+/* ─────────────────────────────────────
+   FOOTER
+───────────────────────────────────── */
+footer {
+  position: fixed;
+
+  bottom: 18px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
+  z-index: 400;
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: rgba(14, 11, 8, 0.22);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+footer span,
+footer a {
+  pointer-events: all;
+
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+footer span:hover,
+footer a:hover {
+  color: rgba(14, 11, 8, 0.55);
+}
+footer a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────
+   MOBILE
+───────────────────────────────────── */
+
+@media (max-width: 900px) {
+  #envelope {
+    width: 94vw;
+  }
+
+  #foto-central {
+    width: 34vw;
+  }
+
+  footer {
+    font-size: 9px;
+  }
+}

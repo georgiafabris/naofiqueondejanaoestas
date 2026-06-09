@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>arquivo | não fiques onde já não estás</title>
+
+    <link rel="stylesheet" href="arquivo.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- cursor -->
+
+    <div id="cursor"></div>
+
+    <!-- voltar -->
+
+    <button class="voltar" onclick="window.location.href = 'site.html'">
+      ← voltar
+    </button>
+
+    <!-- hero -->
+
+    <header class="topo-arquivo">
+      <h1>não fiques onde já não estás</h1>
+    </header>
+
+    <!-- main -->
+
+    <main>
+      <section class="introducao">
+        <p>
+          Desenvolvido através de três suportes complementares — publicação,
+          instalação e website — o projeto permanece em constante deslocação. Em
+          vez de estabelecer uma sequência fixa, cada meio prolonga os estados
+          do outro, permitindo que a experiência se reorganize através da
+          matéria, da imagem e do gesto.
+        </p>
+      </section>
+
+      <figure class="imagem-principal">
+        <img src="img/documental/instalacao-01.png" />
+
+        <figcaption>vista geral da instalação · FBAUP · 2026</figcaption>
+      </figure>
+
+      <div class="fragmento">
+        o percurso não procura solução,<br />
+        mas permanência, atenção e latência.
+      </div>
+
+      <div class="duas-imagens">
+        <figure>
+          <img src="img/documental/instalacao-02.png" />
+
+          <figcaption>manifesto suspenso em voal translúcido</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img/documental/instalacao-03.png" />
+
+          <figcaption>sobreposição de imagens e estados</figcaption>
+        </figure>
+      </div>
+
+      <figure class="imagem-media">
+        <img src="img/documental/publicacao-04.png" />
+
+        <figcaption>conjunto de encartes</figcaption>
+      </figure>
+
+      <section class="texto">
+        <p>
+          A publicação constitui o núcleo físico do projeto. Sete encartes
+          independentes são reunidos por um cordão orgânico, recusando uma ordem
+          única de leitura.
+        </p>
+      </section>
+
+      <div class="duas-imagens">
+        <figure>
+          <img src="img/documental/publicacao-01.png" />
+
+          <figcaption>detalhe dos materiais</figcaption>
+        </figure>
+
+        <figure>
+          <img src="img/documental/publicacao-02.png" />
+
+          <figcaption>detalhe dos materiais</figcaption>
+        </figure>
+      </div>
+
+      <div class="fragmento direita">
+        cada suporte participa<br />
+        na construção de significado.
+      </div>
+
+      <figure class="imagem-principal">
+        <img src="img/documental/publicacao05.png" />
+
+        <figcaption>encartes dispersos</figcaption>
+      </figure>
+
+      <figure class="imagem-pequena">
+        <img src="img/documental/publicacao-04.png" />
+
+        <figcaption>envelope aberto</figcaption>
+      </figure>
+
+      <figure class="imagem-media">
+        <img src="img/documental/instalacao-02.png" />
+
+        <figcaption>publicação apresentada em deck</figcaption>
+      </figure>
+
+      <figure class="imagem-pequena">
+        <img src="img/documental/instalacao-03.png" />
+
+        <figcaption>detalhe</figcaption>
+      </figure>
+
+      <figure class="imagem-media">
+        <img src="img/documental/instalacao-01.png" />
+
+        <figcaption>protótipo da instalação</figcaption>
+      </figure>
+
+      <blockquote>
+        Faz do gesto a tua única resposta. Sabendo que, ao moveres-te, trocas o
+        infinito para finalmente viveres a vida.
+      </blockquote>
+    </main>
+
+    <!-- footer -->
+
+    <footer>
+      <span> geórgia fabris · 2026 </span>
+
+      <span> belas artes · universidade do porto </span>
+    </footer>
+
+    <!-- cursor script -->
+
+    <script>
+      const cursor = document.getElementById("cursor");
+
+      window.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+    </script>
+  </body>
+</html>

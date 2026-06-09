@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>latência</title>
+
+    <link rel="stylesheet" href="publicacao.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- cursor -->
+
+    <div id="cursor"></div>
+
+    <!-- voltar -->
+
+    <button class="voltar" onclick="window.location.href = 'site.html'">
+      ← voltar
+    </button>
+
+    <!-- título -->
+
+    <header class="topo">
+      <h1>latência</h1>
+    </header>
+
+    <!-- publicação -->
+
+    <main>
+      <!-- envelope -->
+
+      <img id="envelope" src="img/envelope/latencia/envelope.png" alt="" />
+
+      <!-- fotografia arrastável -->
+
+      <img
+        id="foto-central"
+        src="img/envelope/latencia/foto-central.png"
+        alt=""
+      />
+    </main>
+
+    <!-- footer -->
+
+    <footer>
+      <a id="link-manifesto" href="manifesto.html">Geórgia Fabris, 2026 </a>
+      <a id="link-documental" href="arquivo.html">
+        Belas Artes · Universidade do Porto
+      </a>
+    </footer>
+    <!-- script -->
+
+    <script>
+      /* ─────────────────────────────
+       CURSOR
+    ───────────────────────────── */
+
+      const cursor = document.getElementById("cursor");
+
+      window.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      /* ─────────────────────────────
+       ELEMENTOS
+    ───────────────────────────── */
+
+      const envelope = document.getElementById("envelope");
+
+      const foto = document.getElementById("foto-central");
+
+      /* ─────────────────────────────
+       ESTADOS
+    ───────────────────────────── */
+
+      let estado = 0;
+
+      envelope.addEventListener("click", () => {
+        estado++;
+
+        /* metade */
+
+        if (estado === 1) {
+          trocarImagem("img/envelope/latencia/metade.png");
+        } else if (estado === 2) {
+          /* aberto */
+          trocarImagem("img/envelope/latencia/aberto.png");
+
+          foto.classList.add("visivel");
+        }
+      });
+
+      /* ─────────────────────────────
+       TROCA
+    ───────────────────────────── */
+
+      function trocarImagem(src) {
+        envelope.style.opacity = 0;
+
+        setTimeout(() => {
+          envelope.src = src;
+
+          envelope.onload = () => {
+            envelope.style.opacity = 1;
+          };
+        }, 350);
+      }
+
+      /* ─────────────────────────────
+       DRAG FOTO
+    ───────────────────────────── */
+
+      let dragging = false;
+
+      let offsetX = 0;
+      let offsetY = 0;
+
+      foto.addEventListener("mousedown", (e) => {
+        dragging = true;
+
+        foto.classList.add("dragging");
+
+        offsetX = e.clientX - foto.offsetLeft;
+
+        offsetY = e.clientY - foto.offsetTop;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!dragging) return;
+
+        foto.style.left = e.clientX - offsetX + "px";
+
+        foto.style.top = e.clientY - offsetY + "px";
+      });
+
+      window.addEventListener("mouseup", () => {
+        dragging = false;
+
+        foto.classList.remove("dragging");
+      });
+
+      /* touch mobile */
+
+      foto.addEventListener("touchstart", (e) => {
+        dragging = true;
+
+        const touch = e.touches[0];
+
+        offsetX = touch.clientX - foto.offsetLeft;
+
+        offsetY = touch.clientY - foto.offsetTop;
+      });
+
+      window.addEventListener("touchmove", (e) => {
+        if (!dragging) return;
+
+        const touch = e.touches[0];
+
+        foto.style.left = touch.clientX - offsetX + "px";
+
+        foto.style.top = touch.clientY - offsetY + "px";
+      });
+
+      window.addEventListener("touchend", () => {
+        dragging = false;
+      });
+    </script>
+  </body>
+</html>
