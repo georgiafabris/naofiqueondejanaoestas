@@ -140,8 +140,7 @@ INTRODUÇÃO
 ───────────────────────────────────── */
 
 .introducao {
-  width: 38vw;
-
+  width: min(520px, 42vw);
   margin-bottom: 6rem;
 }
 
@@ -180,7 +179,7 @@ FRAGMENTOS
 ───────────────────────────────────── */
 
 .fragmento {
-  width: 23vw;
+  width: min(340px, 28vw);
 
   margin-left: auto;
   margin-bottom: 6rem;
@@ -287,7 +286,7 @@ CITAÇÃO FINAL
 ───────────────────────────────────── */
 
 blockquote {
-  width: 55vh;
+  width: min(680px, 70vw);
 
   margin: 5rem auto 0;
 
@@ -354,48 +353,159 @@ footer a {
 
   text-decoration: none;
 }
+
 /* ─────────────────────────────────────
 MOBILE
 ───────────────────────────────────── */
 
 @media (max-width: 900px) {
-  main {
-    width: 88vw;
+
+  /* topo */
+
+  .topo-arquivo {
+    top: 18px;
+    right: 18px;
+  }
+
+  .topo-arquivo h1 {
+    font-size: 12vw;
+    line-height: 0.9;
+
+    max-width: 48vw;
+
+    text-align: right;
   }
 
   .voltar {
+    top: 20px;
+    left: 18px;
+
     font-size: 10px;
   }
 
-  .introducao,
+  /* conteúdo */
+
+  main {
+    width: 88vw;
+
+    padding-top: 90px;
+    padding-bottom: 120px;
+  }
+
+  /* texto abertura */
+
+  .introducao {
+    width: 100%;
+
+    margin-bottom: 3rem;
+  }
+
+  .introducao p {
+    font-size: 34px;
+
+    line-height: 0.95;
+  }
+
+  /* textos intermédios */
+
   .texto {
     width: 100%;
+
+    margin-bottom: 3rem;
   }
+
+  .texto p {
+    font-size: 28px;
+
+    line-height: 1;
+  }
+
+  /* fragmentos */
 
   .fragmento {
     width: 100%;
 
     margin-left: 0;
+    margin-right: 0;
+
+    margin-bottom: 3rem;
+
+    font-size: 22px;
+
+    line-height: 1.05;
+  }
+
+  .fragmento.direita {
+    margin-right: 0;
+  }
+
+  /* imagens */
+
+  figure {
+    margin-bottom: 2rem;
   }
 
   .imagem-principal,
   .imagem-media,
   .imagem-pequena {
     width: 100%;
-      margin: 0 auto 3rem auto;
+
+    margin: 0 0 2rem 0;
   }
+
+  .imagem-pequena {
+    margin-left: 0;
+  }
+
+  /* duas imagens */
 
   .duas-imagens {
     flex-direction: column;
-    gap: 4rem;
-    margin: 0 auto 3rem auto;
+
+    gap: 2rem;
+
+    margin-bottom: 2rem;
   }
 
   .duas-imagens figure {
     width: 100%;
   }
 
-  footer {
+  /* legendas */
+
+  figcaption {
     font-size: 9px;
+
+    line-height: 1.6;
   }
+
+  /* frase final */
+
+  blockquote {
+    width: 100%;
+
+    margin-top: 2rem;
+
+    font-size: 22px;
+
+    line-height: 1.05;
+
+    text-align: left;
+  }
+
+  /* footer */
+
+  footer {
+    left: 16px;
+    right: 16px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+  }
+
 }
