@@ -140,7 +140,7 @@ INTRODUÇÃO
 ───────────────────────────────────── */
 
 .introducao {
-  width: min(520px, 42vw);
+  width: min(580px, 43vw);
   margin-bottom: 6rem;
 }
 
@@ -368,7 +368,7 @@ MOBILE
   }
 
   .topo-arquivo h1 {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 0.9;
 
     max-width: 48vw;
@@ -401,7 +401,7 @@ MOBILE
   }
 
   .introducao p {
-    font-size: 28px;
+    font-size: 26px;
 
     line-height: 0.95;
   }
@@ -415,7 +415,7 @@ MOBILE
   }
 
   .texto p {
-    font-size: 28px;
+    font-size: 26px;
 
     line-height: 1;
   }
