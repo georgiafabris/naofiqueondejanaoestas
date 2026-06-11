@@ -363,6 +363,10 @@ MOBILE
     width: 88vw;
   }
 
+  .voltar {
+    font-size: 10px;
+  }
+
   .introducao,
   .texto {
     width: 100%;
@@ -378,12 +382,13 @@ MOBILE
   .imagem-media,
   .imagem-pequena {
     width: 100%;
+      margin: 0 auto 3rem auto;
   }
 
   .duas-imagens {
     flex-direction: column;
-
     gap: 4rem;
+    margin: 0 auto 3rem auto;
   }
 
   .duas-imagens figure {
