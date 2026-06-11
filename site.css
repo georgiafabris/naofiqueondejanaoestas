@@ -290,6 +290,10 @@ footer a {
 ───────────────────────────────────── */
 
 @media (max-width: 900px) {
+  .voltar {
+    font-size: 10px;
+  }
+  
   #linha-estados {
     gap: 18vw;
     padding-left: 18vw;
