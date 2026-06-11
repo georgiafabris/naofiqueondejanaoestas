@@ -241,8 +241,26 @@ MOBILE
   main {
     width: 88vw;
   }
+  /* topo */
+
+  .topo-arquivo {
+    top: 18px;
+    right: 18px;
+  }
+
+  .topo-arquivo h1 {
+    font-size: 20px;
+    line-height: 0.9;
+
+    max-width: 48vw;
+
+    text-align: right;
+  }
 
   .voltar {
+    top: 20px;
+    left: 18px;
+
     font-size: 10px;
   }
 
@@ -267,3 +285,18 @@ MOBILE
     text-align: center;
   }
 }
+
+ /* footer */
+
+  footer {
+    left: 16px;
+    right: 16px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+  }
