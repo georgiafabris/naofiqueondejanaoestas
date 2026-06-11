@@ -368,7 +368,7 @@ MOBILE
   }
 
   .topo-arquivo h1 {
-    font-size: 12vw;
+    font-size: 18px;
     line-height: 0.9;
 
     max-width: 48vw;
@@ -401,7 +401,7 @@ MOBILE
   }
 
   .introducao p {
-    font-size: 34px;
+    font-size: 28px;
 
     line-height: 0.95;
   }
@@ -490,7 +490,7 @@ MOBILE
 
     line-height: 1.05;
 
-    text-align: left;
+    text-align: center;
   }
 
   /* footer */
