@@ -295,15 +295,65 @@ footer a {
 ───────────────────────────────────── */
 
 @media (max-width: 900px) {
-  #envelope {
-    width: 94vw;
+
+  /* voltar */
+
+  .voltar {
+    top: 20px;
+    left: 18px;
+
+    font-size: 10px;
   }
+
+  /* título */
+
+  .topo {
+    top: 18px;
+    right: 18px;
+  }
+
+  .topo h1 {
+    font-size: 20px;
+
+    line-height: 0.9;
+
+    max-width: 45vw;
+
+    text-align: right;
+  }
+
+  /* envelope */
+
+  #envelope {
+    width: 96vw;
+
+    max-height: 78vh;
+
+    margin-left: 0;
+  }
+
+  /* fotografia removível */
 
   #foto-central {
-    width: 34vw;
+    width: 58vw;
+
+    max-width: none;
+
+    max-height: 68vh;
   }
 
+  /* footer */
+
   footer {
-    font-size: 9px;
+    left: 16px;
+    right: 16px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
   }
 }
