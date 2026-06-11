@@ -139,10 +139,10 @@ ESTROFES
 ───────────────────────────────────── */
 
 .estrofe {
-  width: 50vw;
+  width: min(700px, 50vw);
 
-  margin-bottom: 24vh;
-
+  margin-bottom: 12rem;
+  
   text-align: center;
 }
 
@@ -158,10 +158,10 @@ ESTROFES
 }
 
 .estrofe.final {
-  width: 50vw;
+  width: min(700px, 50vw);
 
-  margin: 28vh auto 0;
-
+  margin: 14rem auto 0;
+  
   text-align: center;
 }
 
@@ -238,17 +238,19 @@ MOBILE
 ───────────────────────────────────── */
 
 @media (max-width: 900px) {
+
   main {
     width: 88vw;
+    padding-top: 110px;
+    padding-bottom: 120px;
   }
-  /* topo */
 
-  .topo-arquivo {
+  .topo-manifesto {
     top: 18px;
     right: 18px;
   }
 
-  .topo-arquivo h1 {
+  .topo-manifesto h1 {
     font-size: 20px;
     line-height: 0.9;
 
@@ -276,17 +278,13 @@ MOBILE
   }
 
   .estrofe p {
-    font-size: 18px;
+    font-size: 22px;
+    line-height: 1.05;
   }
 
   .estrofe.final {
     margin: 3rem auto 0;
-
-    text-align: center;
   }
-}
-
- /* footer */
 
   footer {
     left: 16px;
@@ -300,3 +298,4 @@ MOBILE
 
     gap: 6px;
   }
+}
