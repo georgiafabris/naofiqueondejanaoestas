@@ -242,18 +242,28 @@ MOBILE
     width: 88vw;
   }
 
+  .voltar {
+    font-size: 10px;
+  }
+
   .estrofe,
   .estrofe.direita,
   .estrofe.centro,
   .estrofe.final {
     width: 100%;
 
-    margin-left: 0;
+    margin-bottom: 3rem;
 
-    text-align: left;
+    text-align: center;
   }
 
   .estrofe p {
-    font-size: clamp(26px, 8vw, 40px);
+    font-size: 18px;
+  }
+
+  .estrofe.final {
+    margin: 3rem auto 0;
+
+    text-align: center;
   }
 }
